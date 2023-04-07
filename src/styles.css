@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 4px;
+}
+
+.form-group input {
+  width: 25%;
+  border: 1px solid #333;
+  border-radius: 3px;
+  padding: 6px 4px;
+}
+
+.form-group input:focus {
+  outline: none;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.btn {
+	display: inline-block;
+	font-weight: 400;
+	color: #212529;
+	text-align: center;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: .25rem;
+	color: #fff;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.btn-create {
+  background-color: #007bff;
+}
+
+.btn-create:hover{
+  	background-color: #0069d9;
+}
+
+.btn-save {
+  background-color: #35c140;
+}
+
+.btn-save:hover{
+  	background-color: #35c141de;
+}
+
+.btn-delete {
+  background-color: #f6611c;
+}
+
+.btn-delete:hover{
+  	background-color: #d93600;
+}

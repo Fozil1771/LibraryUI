@@ -1,1 +1,16 @@
-<p>edit-author works!</p>
+
+<div *ngIf="author">
+  <h2>{{ author.name }}</h2>
+  <div class="form-group">
+    <label for="">Name:</label>
+    <input [(ngModel)]="author.name" placeholder="Full name" />
+  </div>
+  <div class="form-group">
+    <label for="">Birth Date:</label>
+    <input [(ngModel)]="author.dateOfBirth" type="date" placeholder="Birth Date" />
+  </div>
+  <button class="btn btn-save" (click)="updateAuthor(author)" *ngIf="author.id">Save</button>
+  <button class="btn btn-delete" (click)="deleteAuthor(author)" *ngIf="author.id">Delete</button>
+  <button class="btn btn-create" (click)="createAuthor(author)" *ngIf="!author.id">Create</button>
+</div>
+

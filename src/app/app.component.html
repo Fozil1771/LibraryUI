@@ -1,11 +1,23 @@
-<button (click)="initNewBook()">Create new book</button>
-<a href="/">Home</a>
+<h1>Library</h1>
+
+<div style="margin-bottom: 20px;">
+<button class="btn btn-create" (click)="initNewBook()">Create new book</button>
+<button class="btn btn-create" (click)="initNewAuthor()">Create new author</button>
+</div>
+
+
+
+<app-edit-book [book]="bookToEdit" (booksUpdated)="updateBookList($event)"></app-edit-book>
+<app-edit-author [author]="authorToEdit" (authorsUpdated)="updateAuthorList($event)"></app-edit-author>
+
+
+<h2 style="text-align: center;">Books</h2>
+
 <table>
   <thead>
     <th>Title</th>
     <th>Genre</th>
     <th>Publisher</th>
-    <th>ISBN</th>
     <th>Rating</th>
     <th>Release Date</th>
   </thead>
@@ -14,12 +26,24 @@
       <td>{{ book.title }}</td>
       <td>{{ book.genre }}</td>
       <td>{{ book.publisher }}</td>
-      <td>{{ book.isbn }}</td>
       <td>{{ book.rating }}</td>
       <td>{{ book.releaseDate }}</td>
-      <td><button (click)="editBook(book)">Edit</button></td>
+      <td><button class="btn btn-save" (click)="editBook(book)">Edit</button></td>
     </tr>
   </tbody>
 </table>
-
-<app-edit-book [book]="bookToEdit" (booksUpdated)="updateBookList($event)"></app-edit-book>
+<hr>
+<h2 style="text-align: center;">Authors</h2>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Date of Birth</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let author of authors">
+      <td>{{ author.name }}</td>
+      <td>{{ author.dateOfBirth }}</td>
+      <td><button class="btn btn-save" (click)="editAuthor(author)">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
